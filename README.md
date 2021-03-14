@@ -54,4 +54,13 @@ if (checkIfCustomerIsEligibleForDiscount(customer)
  - Don't have commented out code. Delete it and if required in future, you can fetch it from git based on the commit hash when it was deleted.
  - Add a comment as local to the code it describes. Don't describe global state in the comments.
  - Make sure the comments have a clear connection with the code. Your comment should not confuse the reader about the code.
- - 
+
+## Formatting
+ - Having badly formatted code gives an impression to the reader that other parts of the code will also have some hidden discrepencies.
+ - Having a set rules of formatting for the project and an automated tool to enforce the formatting helps to maintain the codebase.
+ - Prefer small size over larger files.
+ - Consider the newspaper as an example for maintaining a file. The filename should be clear enough to give a high-level overview of what the code does. As we go down in the file the lower level details should be exposed in the linear order of file depth.
+ - Use blank lines judicially to describe separation of concepts and new ideas in a code.
+ - Lines of code that are tightly linked should appear together without any break such as a blank line or a comment.
+ - Concepts that are closely related should be kept vertically close to each other.
+ -  
