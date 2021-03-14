@@ -24,3 +24,34 @@ Notes on the book Clean Code
  - In order for a function to do just one thing, it should not cross one level of abstraction.
  - If you are unable to extract a functionality from a function, then originally function was not doing just one thing.
  - Extract as long as you can extract no more i.e. `Extract till you drop`.
+
+## Comments
+ - Comments don't make up for bad code.
+ - While adding a comment, always think if there is a way to avoid comment and make the code self explanatory.
+ - Treat comment as a failure.
+ - The only good comment is the comment you found a way not to write.
+ - If you end up writing comment, try to ensure that the comment does not goes out of sync with the actual code in future iterations.
+ - Comments can act as warning. If you want someone to not change a code or provide instructions for reuse of code, warning comments might come in handy.
+ - `TODO` comments can be used to plan the future changes of the code. Make sure to scan the codebase regularly for `TODO` and put an effort to reduce `TODO` with each iteration.
+ - Comments can be used to amplify changes that might seem minor to others such as `trim`, `length - 1` etc.
+ - For public facing APIs, have a very clean and clear `docstring`. `Javadoc` for example.
+ - Avoid redundant comments at all cost. A comment that provides no extra information in addition to reading the actual code should be removed.
+ - A comment that contradicts the behavior of actual code should be considered misleading comment. They create confusion for anyone reading the code.
+ - Always prefer for a scenario where you can remove a comment with a function call or a variable. 
+```
+// Check if customer is eligible for discount
+if (customer.age > 25 && customer.salary > 20000 && customer.salary < 60000) 
+                               
+                               VS
+                               
+if (customer.isEligibleForDiscount()) 
+
+                               OR 
+                               
+if (checkIfCustomerIsEligibleForDiscount(customer)
+```
+ - Don't have comments for things that can be taken care by a version control system. Ex: comments about author's name or date the change was added or commit hash
+ - Don't have commented out code. Delete it and if required in future, you can fetch it from git based on the commit hash when it was deleted.
+ - Add a comment as local to the code it describes. Don't describe global state in the comments.
+ - Make sure the comments have a clear connection with the code. Your comment should not confuse the reader about the code.
+ - 
