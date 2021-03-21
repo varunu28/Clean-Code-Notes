@@ -63,4 +63,9 @@ if (checkIfCustomerIsEligibleForDiscount(customer)
  - Use blank lines judicially to describe separation of concepts and new ideas in a code.
  - Lines of code that are tightly linked should appear together without any break such as a blank line or a comment.
  - Concepts that are closely related should be kept vertically close to each other.
- -  
+ -  Variables should be declared as close to their usage as possible.
+ -  Variables used for control of a loop should be declared as a part of their loop whenever possible.
+ -  Instance variables should be defined at the starting of the class. Anyone reading the class definition should understand what variables does this class use before going to the functions the class describes.
+ -  If one function calls another function then they should be vertically close to each other. Preferrabely the caller function should be above the function getting called.
+ -  Functions with same **conceptual affinity** should be vertically close to each other. Conceptual affinity can mean functions calling each other, overloaded constructors or functions performing operations of similar behavior.
+ -  Use hortizontal space to associate things that are closely related and disassociate things that are weakly related.
