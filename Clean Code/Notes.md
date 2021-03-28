@@ -69,3 +69,34 @@ if (checkIfCustomerIsEligibleForDiscount(customer)
  -  If one function calls another function then they should be vertically close to each other. Preferrabely the caller function should be above the function getting called.
  -  Functions with same **conceptual affinity** should be vertically close to each other. Conceptual affinity can mean functions calling each other, overloaded constructors or functions performing operations of similar behavior.
  -  Use hortizontal space to associate things that are closely related and disassociate things that are weakly related.
+
+## Objects & Data Structures
+ - A class should not expose the implementation details and its variables to the user. It should rather provide an abstraction to the underlying implementation so that it holds the flexibility to change the type and implementation details in the future
+ ```
+ class Car {
+   public double getCurrentFuelCapacity();
+   public double getTotalFuelCapacity();
+ }
+               VS
+ class Car {
+   public double getPercentageFuelCapacity();
+ }
+ ```
+  - **Objects** hide their data behind abstractions and expose functions that operate on that data. **Data Structures** expose their data and have no meaningful operations.
+  - Procedural code makes it easy to add new functions without changing data structure. OO code makes it easy to add new data structures without changing existing functions.
+  - **Law of Demeter** states that a module should not know internal details of the objects it manipulates.
+  - **Train Wreck** code is when a code is represented as a chain of function calls on one another.
+```
+String output = ctct.getOptions().getScratchDir().getAbsolutePath();
+
+              VS
+ 
+ Options options = ctxt.getOptions();
+ File scratchDir = options.getScratchDir();
+ String output = scratchDir.getAbsolutePath();
+```
+ - Avoid hybrids which are half objects and half data structures i.e. they do concrete operations but also allow their users to access and mutate the data through public getters and setters.
+ - **Data Transfer Objects(DTO)** is a class with public variables and no functions. 
+ - **Beans** have private variables manipulated by getters and setters.
+ - **Active Record** is a special form of DTO. They contain public variables with methods such as `save`, `find`. They can be a direct translations of database tables. Make sure to not add any business logic in an active record as doing so will turn them into a hybrid. 
+ 
