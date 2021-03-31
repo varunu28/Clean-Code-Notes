@@ -100,3 +100,16 @@ String output = ctct.getOptions().getScratchDir().getAbsolutePath();
  - **Beans** have private variables manipulated by getters and setters.
  - **Active Record** is a special form of DTO. They contain public variables with methods such as `save`, `find`. They can be a direct translations of database tables. Make sure to not add any business logic in an active record as doing so will turn them into a hybrid. 
  
+## Error Handling
+ - Use exceptions than returning error code. It makes the caller code more cleaner as the code doesn't need to assert for exact error codes and have to handle the exception explicitly.
+ - In error handling, the `try-catch-finally` follows a pattern where each step under `try` block can result in failure and stop execution and the execution resumes in the `catch` block.
+ - The `catch` block should leave the program in a consistent state and revert any changes done by failing `try` block.
+ - Try to write tests that force exceptions and then add business logic to make your tests pass.
+ - Avoid checked exceptions as they force us to make changes to multiple levels from where the actual function throwing the exception is called.
+ - Every exception that is thrown should provide context in which the exception occurs and the source of code that resulted in exception.
+ - Exceptions thrown by third party library should be converted to an exception that user can understand. This can be done by creating a wrapper for the library. The wrapper will convert the exceptions thrown by library to exceptions that make more sense to users of your code.
+ - If you have a case where you don't abort the program in case of an exception but rather change the behavior then its better to abstract the exception and have a normal flow for the actual use case.
+ - **Special Case Pattern** is when you create a class or configure an object so that it handles a special case for you. This can be used when the client code doesn't needs to deal with an exception that results in crashing of your program but expects a different behavior in case of exception.
+ - Don't return a **null**. Always prefer throwing an exception or a special case objects. For example if a returned list doesn't exists then rather than returning a null, return an empty list.
+ - Don't pass **null**. Prefer throwing a well formed exception when you receive a null parameter.
+ - Clean code has an attribute of separating error handling to an extent that it doesn't clutters the actual business logic and makes the code readable without jumping around the exception handling code.
