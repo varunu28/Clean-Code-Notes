@@ -113,3 +113,10 @@ String output = ctct.getOptions().getScratchDir().getAbsolutePath();
  - Don't return a **null**. Always prefer throwing an exception or a special case objects. For example if a returned list doesn't exists then rather than returning a null, return an empty list.
  - Don't pass **null**. Prefer throwing a well formed exception when you receive a null parameter.
  - Clean code has an attribute of separating error handling to an extent that it doesn't clutters the actual business logic and makes the code readable without jumping around the exception handling code.
+
+## Boundaries
+ - When using a boundary interface like `Map`, usage of the interface should be encapsulated rather than allowing the users to directly manipulate it by passing the `Map` to them.
+ - When using third party APIs, write tests that describe the desired usage of these APIs. These tests are called **learning tests**.
+ - **Learning tests** are useful when we are figuring out the correct usage of an API and understand how to best use it to fulfil our use case. They also help us in recognizing any breaking changes that might come up with API version update.
+ - While using code that is out of our control, keep clear boundaries on the way our code depends on the third party code so that future changes in third party APIs do not create huge rework for our system.
+ - While using third party code, prefer to use **adapter** pattern in order to reduce dependency on the third party code. This helps us in creating a *plug and play* environment rather than being tightly coupled to the third party code.
