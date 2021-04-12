@@ -137,3 +137,15 @@ String output = ctct.getOptions().getScratchDir().getAbsolutePath();
    - **R**epeatable
    - **S**elf Validating
    - **T**imely 
+
+## Classes
+ - A class should have *public static constants* on the top, followed by *private static constants* and then *private instance variables*.
+ - Public functions should follow the variables. Private functions called by the public functions should come right after the public functions.
+ - Classes should be smaller in size. A size of a class is measured by the count of its responsibilities.
+ - **Single Responsibility Principle(SRP)** states that a class should have one responsibility and only one reason for change. We want a system to have multiple small classes, each having single responsibility and single reason for change. All these classes work with each other to achieve the desired system behaviour.
+ - Classes should have small number of instance variables and each method should manipulate one or more of these methods. A class in which each variable is used by each method is maximally **Cohesive**.
+ - We should aim for maximum cohesion and assume low cohesion as an opportunity to break a class into two or more classes.
+ - Breaking larger function into smaller functions often gives us an opportunity to split a class into smaller classes with higher cohesion.
+ - **Open Closed Principle(OCP)** states that classes should be open for extention but closed for modification. In an ideal system adding a new feature should be done by extending current functionality rather than modifying the existing ones.
+ - A client class should have an interface as its dependencies rather than a concrete implementation.
+ - **Dependency Inversion Principle(DIP)** states that our classes should depend upon abstractions and not concrete details. This promotes loose coupling among client classes and concrete implementations.
