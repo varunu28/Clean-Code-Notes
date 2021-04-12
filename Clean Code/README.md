@@ -120,3 +120,20 @@ String output = ctct.getOptions().getScratchDir().getAbsolutePath();
  - **Learning tests** are useful when we are figuring out the correct usage of an API and understand how to best use it to fulfil our use case. They also help us in recognizing any breaking changes that might come up with API version update.
  - While using code that is out of our control, keep clear boundaries on the way our code depends on the third party code so that future changes in third party APIs do not create huge rework for our system.
  - While using third party code, prefer to use **adapter** pattern in order to reduce dependency on the third party code. This helps us in creating a *plug and play* environment rather than being tightly coupled to the third party code.
+
+## Unit Testing
+ - Laws of Test Driven Development(TDD):
+   - You may not write production code until you have a failing test.
+   - You may not write more of a unit test than is sufficient to fail & not compiling is failing
+   - You may not write more pf production code than it is sufficient to pass failing test.
+ - Test code is as important as production code. It must be kept as clean as production code.
+ - Having a clean test suite provides you with a flexibility to change the architecture/refactor your code without thinking of side effects as there are tests to protect you.
+ - Having a domain specific testing language(**DSTL**) helps in building a clean test. This **DSTL** can be used for test setup, custom assertion etc.
+ - Number of asserts in a test should be minimized, preferabely one.
+ - Test one concept only per test.
+ - Clean test should be **FIRST**:
+   - **F**ast
+   - **I**ndependent
+   - **R**epeatable
+   - **S**elf Validating
+   - **T**imely 
