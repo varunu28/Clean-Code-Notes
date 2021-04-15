@@ -149,3 +149,13 @@ String output = ctct.getOptions().getScratchDir().getAbsolutePath();
  - **Open Closed Principle(OCP)** states that classes should be open for extention but closed for modification. In an ideal system adding a new feature should be done by extending current functionality rather than modifying the existing ones.
  - A client class should have an interface as its dependencies rather than a concrete implementation.
  - **Dependency Inversion Principle(DIP)** states that our classes should depend upon abstractions and not concrete details. This promotes loose coupling among client classes and concrete implementations.
+
+## Systems
+ - Software systems should separate the startup process from the runtime logic that takes over after the startup process.
+ - One approach for construction of startup dependencies is to move all the construction logic and wiring to main function. All other modules assume that all dependencies are already fulfiled without knowing any internals of the main function.
+ - When we have a use case where a construction is handled by business logic then we can make use of an **ABSTRACT FACTORY** pattern.
+ - **Dependency Injection** is a powerful mechanism for separating dependency construction from its use.
+ - **Aspect oriented programming(AOP)** helps in creating a decoupled architecutre. Each component of the system will have an aspect related to system such as persistence.
+ - **AspectJ** is an extention of Java language that provides first class support for aspects as modularity constructs.
+ - Separation of concerns helps in testing the architecture to a great extent.
+ - Systems need domain specific languages(DSL). A DSL allows all levels of abstractions and all domains in the application to be expresed as *POJOs*, from high level policy to low-level details.
