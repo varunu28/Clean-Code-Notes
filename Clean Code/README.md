@@ -159,3 +159,11 @@ String output = ctct.getOptions().getScratchDir().getAbsolutePath();
  - **AspectJ** is an extention of Java language that provides first class support for aspects as modularity constructs.
  - Separation of concerns helps in testing the architecture to a great extent.
  - Systems need domain specific languages(DSL). A DSL allows all levels of abstractions and all domains in the application to be expresed as *POJOs*, from high level policy to low-level details.
+
+## Emergence
+ - Kent Beck's four rules for simple design. A design is simple if it follows the below rules:
+   - Runs all the tests.
+   - Contains no duplicates.
+   - Expresses the intent of programmers.
+   - Minimizes number of classes and methods.
+ - **Template method pattern** helps in removing higher level duplication.
