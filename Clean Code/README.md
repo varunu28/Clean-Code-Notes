@@ -167,3 +167,17 @@ String output = ctct.getOptions().getScratchDir().getAbsolutePath();
    - Expresses the intent of programmers.
    - Minimizes number of classes and methods.
  - **Template method pattern** helps in removing higher level duplication.
+
+## Concurrency
+ - Concurrency is a decoupling strategy. It decouples *what gets done* from *when it gets done*.
+ - Common myths associated with concurrency:
+   - Concurrency always improves performance.
+   - Design does not change when writing concurrent programs.
+   - Understanding concurrency issues is not important when working with a container such as **Web or EJB container**.
+ - Some important points about concurrency:
+   - Concurrency incurs some overhead.
+   - Correct concurrency is complex.
+   - Concurrency bugs aren't often repeatable.
+   - Concurrency often requires a fundamental change in design strategy.
+ - Concurrency defense principles:
+   - Keep your concurrency related code separate from other code.
